@@ -1,12 +1,12 @@
 const express = require("express");
 const router = express.Router();
 
-// const mongoose = require("../db/connection");
-
-// const VideoPlaylist = mongoose.model("Videoplaylist");
+const mongoose = require("../db/connection");
+// mongoose.set("debug", true);
+const VideoPlaylist = mongoose.model("Videoplaylist");
 
 router.get("/", (req, res) => {
-  res.send("<h1>Sup Multiverse?</h1>");
+  VideoPlaylist.find({}).then(videos => res.json(videos));
 });
 
 module.exports = router;

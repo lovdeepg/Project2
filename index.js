@@ -8,4 +8,4 @@ app.use(parser.urlencoded({ extended: true })); // interprets key value pairs in
 app.use(parser.json()); // interprets a stringified JSON object on the request body
 app.use("/", playlistController);
 
-app.listen(4000, () => console.log("They see me rollin...on port 4000..."));
+app.listen(3000, () => console.log("They see me rollin...on port 3000..."));

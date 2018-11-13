@@ -1,9 +1,16 @@
-const mongoose = require("../db/connection");
+// const mongoose = require("../db/connection");
+// const Schema = mongoose.Schema;
 
-const CommentsSchema = new mongoose.Schema({
-  content: String
-});
+// const CommentsSchema = new Schema({
+//   content: String
+// });
 
-mongoose.model("Comment", CommentsSchema);
+// module.exports = mongoose.model("Comment", CommentsSchema);
 
-module.exports = mongoose;
+// const mongoose = require("mongoose");
+// const CommentsSchema = new mongoose.Schema({
+//   content: String
+// });
+
+// mongoose.model("Comment", CommentsSchema);
+// module.exports = mongoose;
