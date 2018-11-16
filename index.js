@@ -16,4 +16,8 @@ app.use(parser.urlencoded({ extended: true })); // interprets key value pairs in
 app.use(express.static(__dirname + "/public"));
 app.use("/", playlistController);
 
-app.listen(3000, () => console.log("They see me rollin...on port 3000..."));
+app.set("port", process.env.PORT || 3000);
+
+app.listen(app.get("port"), () => {
+  console.log(`✅ PORT: ${app.get("port")} 🌟`);
+});
