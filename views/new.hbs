@@ -1,20 +1,20 @@
 <div>
-    <form action="/new" method="post">
+    <form action="/" method="post">
         <div>
             <div>
                 <label name="title"> create a new video play list</label>
-                <input name="title" type="input" value="{{title}}" />
+                <input name="title" type="input" {{title}} />
                 {{!-- <input label='submit' type="submit" /> --}}
             </div>
             <div>
                 <label name="url"> video link</label>
-                <input name="url" type="input" />
+                <input name="url" type="input" {{url}} />
                 {{!-- <input label='submit' type="submit" /> --}}
             </div>
 
             <div>
                 <label name="comments"> type your comments</label>
-                <input name="comments" type="input" />
+                <input name="comments" type="input" {{comments}} />
             </div>
             <input label='submit' type="submit" />
         </div>

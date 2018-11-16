@@ -1,12 +1,17 @@
-<h1>this should be mainpage</h1>
+<h1>Videoplaylist page</h1>
+
+<h3><a href="/new">new videoplaylist</a></h3>
 
 
-<h1>hello</h1>
 
 {{#each videos}}
+<div>
 
-<a href="/videoplaylist/{{id}}">Title: {{title}}</a>
-<h1>videolink: {{url}}</h1>
+    <h3>Title: {{title}} </h3>
+    <h3>videolink: {{url}}</h3>
 
-
+    <h3> comments {{comments}}</h3>
+    <h3><a href="/edit/{{this.id}}">edit videoplaylist</a></h3>
+    <h3><a href="/videoplaylist/delete/{{this.id}}">delete videoplaylist</a></h3>
+</div>
 {{/each}}
