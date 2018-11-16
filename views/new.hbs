@@ -1,0 +1,30 @@
+<div>
+    <form action="/new" method="post">
+        <div>
+            <div>
+                <label name="title"> create a new video play list</label>
+                <input name="title" type="input" value="{{title}}" />
+                {{!-- <input label='submit' type="submit" /> --}}
+            </div>
+            <div>
+                <label name="url"> video link</label>
+                <input name="url" type="input" />
+                {{!-- <input label='submit' type="submit" /> --}}
+            </div>
+
+            <div>
+                <label name="comments"> type your comments</label>
+                <input name="comments" type="input" />
+            </div>
+            <input label='submit' type="submit" />
+        </div>
+    </form>
+</div>
+
+
+{{!-- {{#each videos._id}}
+<h2>Title: </h2>{{title}}
+<h2>Url: </h2>{{url}}
+<h2>comments:</h2>{{comments}}
+<a href="/videoplaylist/new">showpage For This Video</a>
+{{/each}} --}}

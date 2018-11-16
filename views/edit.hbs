@@ -1,0 +1,30 @@
+<h1>this should be editpage</h1>
+
+
+{{#each videos}}
+<h2>Title: </h2>{{title}}
+<h2>Url: </h2>{{url}}
+<h2>comments:</h2>{{comments}}
+{{/each}}
+<form action="/videoplaylist/update/{{this.id}}?_method=put" method="post" accept-charset="utf-8">
+    <p>
+        <label>video title:</label>
+        <input type="text" value="{{this.title}}" name="title" id="" />
+    </p>
+    <p>
+        <label>video link:</label>
+        <input type="text" value="{{this.url}}" name="description" id="" />
+    </p>
+
+    <p>
+        <label>comments:</label>
+        <input type="text" value="{{this.comments}}" name="description" id="" />
+        <input type="submit" value="Update" />
+    </p>
+</form>
+
+
+{{!-- edit for delete form --}}
+{{!-- <form action="/videoplaylist/delete/{{this.id}}?_method=delete" method="post">
+    <input type="submit" value="Remove">
+</form> --}}
