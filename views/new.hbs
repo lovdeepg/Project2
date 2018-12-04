@@ -13,18 +13,10 @@
             </div>
 
             <div>
-                <label name="comments"> type your comments</label>
-                <input name="comments" type="input" {{comments}} />
+                <label name="comments[content]"> type your comments</label>
+                <input name="comments[content]" type="input" {{comments}} />
             </div>
             <input label='submit' type="submit" />
         </div>
     </form>
 </div>
-
-
-{{!-- {{#each videos._id}}
-<h2>Title: </h2>{{title}}
-<h2>Url: </h2>{{url}}
-<h2>comments:</h2>{{comments}}
-<a href="/videoplaylist/new">showpage For This Video</a>
-{{/each}} --}}

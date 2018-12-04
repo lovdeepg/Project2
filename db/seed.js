@@ -1,16 +1,28 @@
-const { VideoPlaylist, Comment } = require("../models/videoplaylist");
+const { VideoPlaylist } = require("../models/videoplaylist");
 
-// User.find({}).remove(() => {
-//   Tweet.find({}).remove(() => {
-VideoPlaylist.collection.drop();
-Comment.collection.drop();
+VideoPlaylist.find({}).deleteOne(() => {
+  let lov = VideoPlaylist.create({
+    title: "video killed",
+    url: "https://www.youtube.com/watch?v=Iwuy4hHO3YQ",
+    comments: " this video rocks"
+  })
+    .then(videos => {
+      videos.comments.push(videos.comments);
+    })
+    .then(() => {
+      VideoPlaylist.save(err => console.log(err));
+    });
+});
+
+// VideoPlaylist.collection.drop();
+// Comment.collection.drop();
 // VideoPlaylist.find({}).remove(() => {
 //   Comment.find({}).remove(() => {
-let lov = VideoPlaylist.create({
-  title: "Video killed the radio Star",
-  url: "https://www.youtube.com/watch?v=Iwuy4hHO3YQ",
-  comments: " this video rocks"
-});
+// let lov = VideoPlaylist.create({
+//   title: "Video killed the radio Star",
+//   url: "https://www.youtube.com/watch?v=Iwuy4hHO3YQ",
+//   comments: " this video rocks"
+// });
 //   });
 // });
 

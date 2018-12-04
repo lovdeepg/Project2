@@ -29,11 +29,25 @@ router.get("/new", (req, res) => {
 router.post("/", (req, res) => {
   VideoPlaylist.create({
     title: req.body.title,
-    url: req.body.url,
-    comments: req.body.content
-  }).then(videos => {
-    res.redirect("/");
-  });
+    url: req.body.url
+  })
+    .then(videos => {
+      Comment.create({
+        content: req.body.content
+      })
+        .then(comment => {
+          videos.comments.push(comment);
+          return videos;
+        })
+        .then(video => {
+          video.save(err => {
+            res.redirect("/");
+          });
+        });
+    })
+    .catch(err => {
+      console.log(err);
+    });
 });
 // this is for show
 // router.get("/:id", (req, res) => {
@@ -66,7 +80,4 @@ router.get("/videoplaylist/delete/:id", (req, res) => {
   });
 });
 
-// router.get("/", (req, res) => {
-//   res.redirect("/index");
-// });
 module.exports = router;
