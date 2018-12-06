@@ -10,7 +10,18 @@
     <h3>Title: {{title}} </h3>
     <h3>videolink: {{url}}</h3>
 
-    <h3> comments {{comments}}</h3>
+    {{#each comments}}
+        {{!-- there is something with handlebars to render the first differently then the rest in a loop --}}
+        
+        {{!-- 
+            https://stackoverflow.com/questions/11479094/conditional-on-last-item-in-array-using-handlebars-js-template
+            https://handlebarsjs.com/builtin_helpers.html
+            https://stackoverflow.com/questions/44849073/handlebars-first-first
+            http://handlebarsjs.com/reference.html#data-first
+         --}}
+
+        <h3>Comments: {{content}}</h3>
+    {{/each}}
     <h3><a href="/edit/{{this.id}}">edit videoplaylist</a></h3>
     <h3><a href="/videoplaylist/delete/{{this.id}}">delete videoplaylist</a></h3>
 </div>

@@ -31,24 +31,21 @@ router.post("/", (req, res) => {
     title: req.body.title,
     url: req.body.url
   })
-    .then(videos => {
+    .then(video => {
       Comment.create({
-        content: req.body.content
+        content: req.body.comments['content']
       })
         .then(comment => {
-          videos.comments.push(comment);
-          return videos;
-        })
-        .then(video => {
+          video.comments.push(comment);
           video.save(err => {
             res.redirect("/");
           });
-        });
+        })
+        .catch(err => {
+         console.log(err)
     })
-    .catch(err => {
-      console.log(err);
-    });
 });
+})
 // this is for show
 // router.get("/:id", (req, res) => {
 //   VideoPlaylist.findOne({ _id: req.params.id }).then(videos => {
